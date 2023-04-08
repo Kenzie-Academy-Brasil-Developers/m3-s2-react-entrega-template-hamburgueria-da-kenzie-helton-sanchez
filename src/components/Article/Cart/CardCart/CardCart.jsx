@@ -16,7 +16,7 @@ export function CardCart({product, removeOfTheCart}) {
                   <span>{product.category}</span>
                 </div>
 
-                <button onClick={() => removeOfTheCart(product)}>Remover</button>
+                <button onClick={() => removeOfTheCart(product.id)}>Remover</button>
 
             </CardCartStyle>
 

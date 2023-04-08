@@ -26,6 +26,7 @@ export const MainArticle = styled.main`
     flex-wrap: nowrap;
 
     .container__products--ul {
+      width: 1000px;
       max-width: 65.4vw;
       display: flex;
       flex-wrap: wrap;

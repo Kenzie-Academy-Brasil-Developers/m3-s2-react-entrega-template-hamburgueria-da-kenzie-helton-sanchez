@@ -7,8 +7,9 @@ import { apiHamburgueria } from './services/api.js'
 
 function App() {
 
+  const localStorageCart = localStorage.getItem("@HamburgueriaKenzie:addCart");
   const [apiFood, setApiFood] = useState([]);
-  const [addCart, setAddCart] = useState([]);
+  const [addCart, setAddCart] = useState(localStorageCart ? JSON.parse(localStorageCart) : []);
   const [filterProduct, setFilterProduct] = useState([]);
 
 
@@ -33,6 +34,10 @@ function addToCart (food){
     console.log("esse item ja foi adicionado ao seu carrinho")
   }
 }
+
+useEffect(() => {
+  localStorage.setItem("@HamburgueriaKenzie:addCart", JSON.stringify(addCart));
+}, [addCart])
 
 function removeOfTheCart (foodId) {
   const removeCart = addToCart.filter(product => product.id !== foodId)
